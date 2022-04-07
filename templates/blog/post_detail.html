@@ -7,18 +7,18 @@
             {{ post.published_date }}
         </div>
     {% else %}
-        <a class="bnt btn-default" href="{% url 'post_publish' pk=post.pk%}">Publish</a>
+        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk%}">Publish</a>
     {% endif %}
 
-    <p class="postcontent">{{ post.title|safe|linebreaksbr}}</p>
+    <p class="postcontent">{{ post.text|safe|linebreaksbr}}</p>
 
     {% if user.is_authenticated %}
 
-        <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk%}">
+        <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk %}">
             <span class="glyphicon glyphicon-pencil"></span>
         </a>
 
-        <a class="btn btn-primary" href="{% url 'post_remove' pk=post.pk%}">
+        <a class="btn btn-primary" href="{% url 'post_remove' pk=post.pk %}">
             <span class="glyphicon glyphicon-remove"></span>
         </a>
     {% endif %}
@@ -53,4 +53,4 @@
 
     </div>
 
-{% endblock %}
+{% endblock content%}
