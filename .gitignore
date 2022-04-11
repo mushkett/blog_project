@@ -2,3 +2,4 @@
 .idea/
 venv/
 MyBlog/settings.py
+db.sqlite3
